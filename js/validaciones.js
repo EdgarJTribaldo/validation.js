@@ -96,8 +96,32 @@ function mayorDeEdad(fecha) {
 
 //FUNCION PARA VALIDAR Y ESCUCHAR LA FECHA DE NACIMIENTO.
 
+const fecha = document.querySelector("#birth");
+fecha.addEventListener("blur", (evento) => {
+  validarNacimient(evento.target);
+});
+
+function validarNacimient(input) {
+  const fechaCliente = new Date(input.value);;
+  let mensaje = "";
+  if(!mayorDeEda(fechaCliente)){
+    mensaje = "Debes tener mas de 18 añosss" 
+  }
+
+  input.setCustomValidity(mensaje);
+}
 
 
+function mayorDeEda(fechaa) {
+  const fechaActual = new Date();
+  const diferenciaFechas = new Date(
+    fechaa.getUTCFullYear() + 18,
+    fechaa.getUTCMonth(),
+    fechaa.getUTCDate()
+  );
+    console.log("esto es " );
+  return diferenciaFechas < fechaActual;
+}
 
 
 
