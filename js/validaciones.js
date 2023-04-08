@@ -119,7 +119,6 @@ function mayorDeEda(fechaa) {
     fechaa.getUTCMonth(),
     fechaa.getUTCDate()
   );
-    console.log("esto es " );
   return diferenciaFechas < fechaActual;
 }
 
